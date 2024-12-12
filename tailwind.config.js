@@ -5,5 +5,6 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  base: process.env.NODE_ENV === 'production' ? '/inspira/' : '/',
 }
 
