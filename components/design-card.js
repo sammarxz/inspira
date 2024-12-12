@@ -56,23 +56,33 @@ export class DesignCard extends HTMLElement {
     this.render();
   }
 
-  generateSrcSet(url, format = "") {
-    const widths = [320, 480, 640, 800];
-    const baseUrl = url.split("?")[0];
-    return widths
-      .map((width) => {
-        const resizedUrl =
-          format === "webp"
-            ? `${baseUrl}?w=${width}&format=webp`
-            : `${baseUrl}?w=${width}`;
-        return `${resizedUrl} ${width}w`;
-      })
-      .join(", ");
+  get loading() {
+    return this.hasAttribute("priority") ? "eager" : "lazy";
+  }
+
+  optimizeImageUrl(url, width) {
+    const baseUrl = url.split('?')[0];
+    return `${baseUrl}?w=${width}&fm=webp&q=80`;
   }
 
   render() {
     if (!this._design) return;
-    const { image_url, author, category } = this._design;
+    const { image_url, author } = this._design;
+
+    const sizes = [
+      { width: 320, screenSize: "320w" },
+      { width: 480, screenSize: "480w" },
+      { width: 768, screenSize: "768w" },
+    ];
+
+    const srcset = sizes
+      .map(
+        (size) =>
+          `${this.optimizeImageUrl(image_url, size.width)} ${
+            size.screenSize
+          }`
+      )
+      .join(", ");
 
     this.shadowRoot.innerHTML = `
           <style>
@@ -90,7 +100,28 @@ export class DesignCard extends HTMLElement {
                   padding-top: 75%; /* 4:3 Aspect Ratio */
                   background: #f5f5f5;
                   overflow: hidden;
+                  // aspect-ratio: 4/3;
                   border-radius: 0.5rem;
+              }
+              .image-container::before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(
+                    90deg,
+                    #f5f5f5 0%,
+                    #efefef 50%,
+                    #f5f5f5 100%
+                  );
+                  background-size: 200% 100%;
+                  animation: shimmer 1.5s infinite;
+              }
+              @keyframes shimmer {
+                  0% { background-position: -200% 0; }
+                  100% { background-position: 200% 0; }
               }
               img {
                   position: absolute;
@@ -121,18 +152,19 @@ export class DesignCard extends HTMLElement {
                   <picture>
                       <source
                           type="image/webp"
-                          srcset="${this.generateSrcSet(image_url, "webp")}"
+                          srcset="${srcset}"
                           sizes="(max-width: 768px) 100vw, 25vw"
                       >
                       <img
-                          src="${image_url}"
-                          srcset="${this.generateSrcSet(image_url)}"
-                          sizes="(max-width: 768px) 100vw, 25vw"
-                          alt="Design by ${author}"
-                          loading="lazy"
-                          onload="this.style.opacity = 1"
-                          style="opacity: 0; transition: opacity 0.3s"
-                      >
+                        src="${this.optimizeImageUrl(image_url, 480)}"
+                        srcset="${srcset}"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        width="480"
+                        height="360"
+                        alt="Design by ${author}"
+                        loading="${this.loading}"
+                        decoding="async"
+                      />
                   </picture>
               </div>
               <div class="info">
