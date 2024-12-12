@@ -1,27 +1,80 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inspira - About the Project</title>
     <meta
       name="description"
-      content="Uma galeria de designs de aplicativos incríveis"
+      content="Get a curated selection of the best UI design inspirations from across the web, delivered straight to your inbox."
     />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/dist/output.css" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://contenthub.vite.dev" />
+    <meta property="og:title" content="Inspira" />
+    <meta
+      property="og:description"
+      content="Get a curated selection of the best UI design inspirations from across the web, delivered straight to your inbox."
+    />
+    <meta property="og:image" content="/images/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://contenthub.vite.dev" />
+    <meta property="twitter:title" content="Inspira" />
+    <meta
+      property="twitter:description"
+      content="Get a curated selection of the best UI design inspirations from across the web, delivered straight to your inbox."
+    />
+    <meta property="twitter:image" content="/images/og-image.png" />
     <link rel="manifest" href="/manifest.json" />
-    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-white font-sans text-black min-h-screen relative">
     <div class="flex flex-col gap-12 max-w-md mx-auto p-6 md:p-12">
       <nav class="flex justify-between items-center">
         <div class="flex items-baseline gap-2">
           <a href="/">
-            <img
-              src="./image/logo.svg"
-              alt="inspira logo by Sam Marxz"
+            <svg
               class="max-w-[100px] bg-white"
-            />
+              width="221"
+              height="28"
+              viewBox="0 0 221 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M194.885 1.23999H205.962L220.719 27H210.893L208.17 22.2528H192.677L189.917 27H180.129L194.885 1.23999ZM205.337 17.1744L200.405 8.89439L195.511 17.1744H205.337Z"
+                fill="black"
+              />
+              <path
+                d="M144.543 27V1.23999H164.71C169.224 1.23999 172.695 2.03732 175.124 3.63199C177.578 5.22666 178.804 7.43466 178.804 10.256C178.804 12.2677 178.154 13.9851 176.854 15.408C175.578 16.8064 173.812 17.8368 171.555 18.4992L179.135 27H167.875L161.545 19.4192H154.332V27H144.543ZM163.79 13.752C165.36 13.752 166.611 13.5067 167.543 13.016C168.5 12.5253 168.979 11.8139 168.979 10.8816C168.979 9.97386 168.513 9.27466 167.58 8.78399C166.673 8.29332 165.434 8.04799 163.863 8.04799H154.332V13.752H163.79Z"
+                fill="black"
+              />
+              <path d="M129.486 27V1.23999H139.238V27H129.486Z" fill="black" />
+              <path
+                d="M92.1465 27V1.23999H112.35C116.692 1.23999 120.102 2.03732 122.58 3.63199C125.082 5.20212 126.334 7.48372 126.334 10.4768C126.334 13.4699 125.082 15.7637 122.58 17.3584C120.102 18.9285 116.692 19.7136 112.35 19.7136H101.898V27H92.1465ZM101.898 13.3472H112.166C113.515 13.3472 114.582 13.1141 115.367 12.648C116.152 12.1819 116.545 11.5317 116.545 10.6976C116.545 9.88799 116.152 9.26239 115.367 8.82079C114.582 8.35466 113.515 8.12159 112.166 8.12159H101.898V13.3472Z"
+                fill="black"
+              />
+              <path
+                d="M55.7432 17.9472C60.5272 20.376 66.2312 21.5904 72.8552 21.5904C76.9032 21.5904 78.9272 20.9648 78.9272 19.7136C78.9272 19.4928 78.8413 19.2965 78.6696 19.1248C78.5224 18.9531 78.2648 18.8059 77.8968 18.6832C77.5288 18.536 77.1485 18.4133 76.756 18.3152C76.388 18.2171 75.8728 18.1189 75.2104 18.0208C74.548 17.9227 73.9592 17.8491 73.444 17.8C72.9533 17.7264 72.2664 17.6405 71.3832 17.5424C70.5 17.4197 69.7762 17.3216 69.212 17.248C67.3474 17.0027 65.7282 16.7205 64.3544 16.4016C62.9805 16.0827 61.5821 15.6288 60.1592 15.04C58.7362 14.4267 57.6322 13.6171 56.8472 12.6112C56.0866 11.5808 55.7064 10.3787 55.7064 9.00479C55.7064 7.18933 56.3933 5.64373 57.7672 4.36799C59.1656 3.09226 60.9933 2.17226 63.2504 1.60799C65.532 1.01919 68.1448 0.724792 71.0888 0.724792C76.6824 0.724792 81.589 1.58346 85.8088 3.30079L85.7352 9.48319C84.0669 8.64906 81.9202 7.97439 79.2952 7.45919C76.6701 6.91946 73.8488 6.64959 70.8312 6.64959C69.1138 6.64959 67.7154 6.82133 66.636 7.16479C65.581 7.48373 65.0536 7.94986 65.0536 8.56319C65.0536 8.75946 65.1026 8.93119 65.2008 9.07839C65.3234 9.22559 65.4952 9.37279 65.716 9.51999C65.9613 9.64266 66.2066 9.75306 66.452 9.85119C66.7218 9.94933 67.0776 10.0352 67.5192 10.1088L68.6968 10.3664C69.0648 10.44 69.5432 10.5136 70.132 10.5872C70.7208 10.6608 71.2237 10.7221 71.6408 10.7712C72.0824 10.8203 72.6466 10.8816 73.3336 10.9552C74.0205 11.0288 74.5848 11.0901 75.0264 11.1392C76.253 11.2864 77.3202 11.4459 78.228 11.6176C79.1357 11.7648 80.1416 11.9733 81.2456 12.2432C82.3496 12.4885 83.2818 12.8075 84.0424 13.2C84.8029 13.568 85.5266 14.0096 86.2136 14.5248C86.9005 15.04 87.4157 15.6779 87.7592 16.4384C88.1026 17.1744 88.2744 18.0085 88.2744 18.9408C88.2744 21.664 86.8637 23.7739 84.0424 25.2704C81.221 26.7669 77.5533 27.5152 73.0392 27.5152C69.997 27.5152 66.6728 27.2085 63.0664 26.5952C59.46 25.9819 56.884 25.3563 55.3384 24.7184L55.7432 17.9472Z"
+                fill="black"
+              />
+              <path
+                d="M26.3059 1.23999L42.1667 15.776V1.23999H51.9187V27H42.9027L25.4595 11.1024V27H15.7075V1.23999H26.3059Z"
+                fill="black"
+              />
+              <path
+                d="M0.649658 27V1.23999H10.4017V27H0.649658Z"
+                fill="black"
+              />
+            </svg>
           </a>
         </div>
         <a href="/about" class="text-sm text-neutral-500 hover:text-black">
@@ -29,25 +82,56 @@
         </a>
       </nav>
       <main class="">
-        <h1 class="text-xl md:text-2xl font-semibold">
-          About the project.
-        </h1>
-        <div class="mt-6 mb-1 flex flex-col gap-4 text-neutral-700 text-sm leading-normal">
-          <p>This is the place where to find the latest trends in app visual interface design inspiration for your next digital product.</p>
-          <p>For quite a while now, I’ve been curating great app design content from various sources such as Twitter, Pinterest, Dribbble, Arena, Layers, and more.</p>
-          <p>For that reason, I wanted to create a platform for myself to centrally update and store that information, making it globally accessible and presented in a visually organized manner.</p>
-          <p>As the idea evolved, I thought that other product designers, software engineers, and founders might also be keen to explore and discover these inspirational resources.</p>
+        <h1 class="text-xl md:text-2xl font-semibold">About the project.</h1>
+        <div
+          class="mt-6 mb-1 flex flex-col gap-4 text-neutral-700 text-sm leading-normal"
+        >
+          <p>
+            This is the place where to find the latest trends in app visual
+            interface design inspiration for your next digital product.
+          </p>
+          <p>
+            For quite a while now, I’ve been curating great app design content
+            from various sources such as Twitter, Pinterest, Dribbble, Arena,
+            Layers, and more.
+          </p>
+          <p>
+            For that reason, I wanted to create a platform for myself to
+            centrally update and store that information, making it globally
+            accessible and presented in a visually organized manner.
+          </p>
+          <p>
+            As the idea evolved, I thought that other product designers,
+            software engineers, and founders might also be keen to explore and
+            discover these inspirational resources.
+          </p>
           <p>And so, Inspira was conceived.</p>
-          <p>Curated by <a href="https://marxz.me" target="_blank" class="text-blue-700">@sammarxz</a></p>
-          <hr>
-          <p>All rights belong to the respective owners of the content, and an effort is always made to provide a source.</p>
-          <p>For removal request and other matters, please <a href="mailto:sammarxz@protonmail.com" class="text-blue-700">contact here</a></p>
+          <p>
+            Curated by
+            <a href="https://marxz.me" target="_blank" class="text-blue-700"
+              >@sammarxz</a
+            >
+          </p>
+          <hr />
+          <p>
+            All rights belong to the respective owners of the content, and an
+            effort is always made to provide a source.
+          </p>
+          <p>
+            For removal request and other matters, please
+            <a href="mailto:sammarxz@protonmail.com" class="text-blue-700"
+              >contact here</a
+            >
+          </p>
         </div>
       </main>
     </div>
 
     <footer class="mt-24 text-center py-8 text-neutral-500 px-6 space-y-6">
-      <p>© 2024 Inspira by @sammarxz. All content belongs to their original owners.</p>
+      <p>
+        © 2024 Inspira by @sammarxz. All content belongs to their original
+        owners.
+      </p>
     </footer>
   </body>
 </html>

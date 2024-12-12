@@ -8,6 +8,7 @@ const ASSETS_TO_CACHE = [
   "/js/app.js",
   "/js/data-service.js",
   "/data/designs.json",
+  "/images/logo.svg"
 ];
 
 self.addEventListener("install", (event) => {
