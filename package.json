@@ -1,5 +1,6 @@
 {
   "name": "inspira",
+  "homepage": "https://sammarxz.github.io/inspira",
   "version": "1.0.0",
   "main": "service-worker.js",
   "scripts": {
