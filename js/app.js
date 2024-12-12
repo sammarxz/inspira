@@ -212,21 +212,26 @@ class App {
     }
   }
 
-  renderDesigns(designs) {
-    designs.forEach((design, index) => {
+  async renderDesigns(designs) {
+    const aboveFoldDesigns = designs.slice(0, 4);
+    const remainingDesigns = designs.slice(4);
+
+    aboveFoldDesigns.forEach((design, index) => {
       const card = document.createElement("design-card");
-      card.style.opacity = "0";
-      card.style.transform = "translateY(20px)";
+      card.setAttribute("priority", "true");
       card.design = design;
       this.gallery.appendChild(card);
-
-      requestAnimationFrame(() => {
-        card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-        card.style.transitionDelay = `${index * 50}ms`;
-        card.style.opacity = "1";
-        card.style.transform = "translateY(0)";
-      });
     });
+
+    if (remainingDesigns.length) {
+      setTimeout(() => {
+        remainingDesigns.forEach((design, index) => {
+          const card = document.createElement("design-card");
+          card.design = design;
+          this.gallery.appendChild(card);
+        });
+      }, 100);
+    }
   }
 }
 
