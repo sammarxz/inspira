@@ -1,7 +1,7 @@
 export class DataService {
   constructor() {
     this.cache = new Map();
-    this.dataUrl = "/data/designs.json";
+    this.dataUrl = "./data/designs.json";
     this.allDesigns = null;
     this.itemsPerPage = 20;
   }

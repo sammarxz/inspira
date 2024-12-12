@@ -22,7 +22,7 @@ class App {
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
         navigator.serviceWorker
-          .register("/service-worker.js")
+          .register("./service-worker.js")
           .then((registration) => {
             console.log("Service Worker registrado com sucesso!");
           })
@@ -41,7 +41,7 @@ class App {
           await registration.unregister();
         }
 
-        await navigator.serviceWorker.register("/service-worker.js");
+        await navigator.serviceWorker.register("./service-worker.js");
 
         window.location.reload();
       } catch (error) {
