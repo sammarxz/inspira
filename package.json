@@ -19,7 +19,6 @@
   "bugs": {
     "url": "https://github.com/sammarxz/inspira/issues"
   },
-  "homepage": "https://github.com/sammarxz/inspira#readme",
   "description": "",
   "devDependencies": {
     "autoprefixer": "^10.4.20",
