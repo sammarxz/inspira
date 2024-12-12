@@ -1,0 +1,101 @@
+{
+  "name": "Inspira - App Design Inspiration by @sammarxz",
+  "short_name": "Inspira",
+  "description": "Get a curated selection of the best UI design inspirations from across the web, delivered straight to your inbox.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FFF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/icons/7.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/9.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Mobile Designs",
+      "url": "/#/mobile",
+      "description": "designs mobile"
+    },
+    {
+      "name": "Desktop Designs", 
+      "url": "/#/desktop",
+      "description": "designs desktop"
+    },
+    {
+      "name": "Watch Designs", 
+      "url": "/#/watch",
+      "description": "designs watch"
+    },
+    {
+      "name": "Vision Designs", 
+      "url": "/#/vision",
+      "description": "designs vision"
+    },
+    {
+      "name": "Icons Designs", 
+      "url": "/#/icons",
+      "description": "designs Icons"
+    },
+    {
+      "name": "Illustations Designs", 
+      "url": "/#/illustrations",
+      "description": "designs Illustations"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshots/mobile.png",
+      "sizes": "1080x2340",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/screenshots/desktop.png", 
+      "sizes": "2560x1440",
+      "type": "image/png"
+    }
+  ],
+  "prefer_related_applications": false,
+  "categories": ["design", "creative", "productivity"],
+  "lang": "pt-BR"
+}
